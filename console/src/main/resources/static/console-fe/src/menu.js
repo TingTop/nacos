@@ -14,6 +14,7 @@
 module.exports = {
   data: [
     {
+      enable: false,
       isExtend: true,
       name: '配置管理',
       title: '配置管理',
@@ -164,6 +165,7 @@ module.exports = {
       ],
     },
     {
+      enable: false,
       isExtend: true,
       name: '服务管理',
       title: '服务管理',
@@ -210,6 +212,7 @@ module.exports = {
       ],
     },
     {
+      enable: true,
       isExtend: false,
       name: '命名空间',
       title: '命名空间',
@@ -223,6 +226,37 @@ module.exports = {
       registerName: 'com.alibaba.nacos.page.namespace',
       useRouter: false,
       id: 'namespace',
+    },
+    {
+      enable: false,
+      isExtend: true,
+      name: '集群管理',
+      title: '集群管理',
+      isVirtual: true,
+      projectName: 'nacos',
+      serviceName: 'clusterManagementVirtual',
+      link: 'clusterManagementVirtual',
+      hasFusion: true,
+      template: '',
+      registerName: 'com.alibaba.nacos.page.clusterManagementVirtual',
+      useRouter: false,
+      id: 'com.alibaba.nacos.page.clusterManagementVirtual',
+      children: [
+        {
+          isExtend: false,
+          name: '节点状态',
+          title: '节点状态',
+          isVirtual: false,
+          projectName: 'nacos',
+          serviceName: 'clusterManagement',
+          link: 'clusterManagement',
+          hasFusion: true,
+          template: '',
+          registerName: 'com.alibaba.nacos.page.clusterManagement',
+          useRouter: false,
+          id: 'clusterManagement',
+        },
+      ],
     },
   ],
   defaultKey: 'configurationManagement',

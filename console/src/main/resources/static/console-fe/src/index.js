@@ -24,10 +24,8 @@ import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { ConfigProvider, Loading } from '@alifd/next';
 
 import './lib';
-import _menu from './menu';
 
 import Layout from './layouts/MainLayout';
-import CookieHelp from './utils/cookie';
 import { LANGUAGE_KEY, REDUX_DEVTOOLS } from './constants';
 
 import Login from './pages/Login';
@@ -43,6 +41,7 @@ import ListeningToQuery from './pages/ConfigurationManagement/ListeningToQuery';
 import ConfigurationManagement from './pages/ConfigurationManagement/ConfigurationManagement';
 import ServiceList from './pages/ServiceManagement/ServiceList';
 import ServiceDetail from './pages/ServiceManagement/ServiceDetail';
+import ClusterNodeList from './pages/ClusterManagement/ClusterNodeList';
 
 import reducers from './reducers';
 import { changeLanguage } from './reducers/locale';
@@ -83,6 +82,7 @@ const MENU = [
   { path: '/configurationManagement', component: ConfigurationManagement },
   { path: '/serviceManagement', component: ServiceList },
   { path: '/serviceDetail', component: ServiceDetail },
+  { path: '/clusterManagement', component: ClusterNodeList },
 ];
 
 @connect(
@@ -114,7 +114,7 @@ class App extends React.Component {
       <HashRouter>
         <Switch>
           <Route path="/login" component={Login} />
-          <Layout navList={_menu.data}>
+          <Layout>
             {MENU.map(item => (
               <Route key={item.path} {...item} />
             ))}

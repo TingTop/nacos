@@ -22,8 +22,6 @@ package com.alibaba.nacos.api.common;
  */
 public class Constants {
 
-    public static final String CLIENT_VERSION_HEADER = "Client-Version";
-
     public static final String CLIENT_VERSION = "3.0.0";
 
     public static int DATA_IN_BODY_VERSION = 204;
@@ -93,6 +91,26 @@ public class Constants {
     /**
      * millisecond
      */
+    public static final int CONFIG_LONG_POLL_TIMEOUT = 30000;
+
+    /**
+     * millisecond
+     */
+    public static final int MIN_CONFIG_LONG_POLL_TIMEOUT = 10000;
+
+    /**
+     * millisecond
+     */
+    public static final int CONFIG_RETRY_TIME = 2000;
+
+    /**
+     * Maximum number of retries
+     */
+    public static final int MAX_RETRY = 3;
+
+    /**
+     * millisecond
+     */
     public static final int RECV_WAIT_TIMEOUT = ONCE_TIMEOUT * 5;
 
     public static final String ENCODE = "UTF-8";
@@ -105,9 +123,11 @@ public class Constants {
 
     public static final int FLOW_CONTROL_INTERVAL = 1000;
 
-    public static final String LINE_SEPARATOR = Character.toString((char)1);
+    public static final float DEFAULT_PROTECT_THRESHOLD = 0.0F;
 
-    public static final String WORD_SEPARATOR = Character.toString((char)2);
+    public static final String LINE_SEPARATOR = Character.toString((char) 1);
+
+    public static final String WORD_SEPARATOR = Character.toString((char) 2);
 
     public static final String LONGPOLLING_LINE_SEPARATOR = "\r\n";
 
@@ -121,11 +141,15 @@ public class Constants {
     public static final int NAMING_INSTANCE_ID_SEG_COUNT = 4;
     public static final String NAMING_HTTP_HEADER_SPILIER = "\\|";
 
-    public static final String NAMING_DEFAULT_CLUSTER_NAME = "DEFAULT";
+    public static final String DEFAULT_CLUSTER_NAME = "DEFAULT";
 
-    public static final String REQUEST_PARAM_NAMESPACE_ID = "namespaceId";
-    public static final String REQUEST_PARAM_DEFAULT_NAMESPACE_ID = "public";
-    public static final String REQUEST_PARAM_SERVICE_NAME = "serviceName";
-    public static final String REQUEST_PARAM_GROUP = "group";
-    public static final String REQUEST_PARAM_DEFAULT_GROUP = "DEFAULT_GROUP";
+    public static final String DEFAULT_NAMESPACE_ID = "public";
+
+    public static final boolean DEFAULT_USE_CLOUD_NAMESPACE_PARSING = true;
+
+    public static final int WRITE_REDIRECT_CODE = 307;
+
+    public static final String SERVICE_INFO_SPLITER = "@@";
+
+    public static final String NULL_STRING = "null";
 }
